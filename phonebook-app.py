@@ -12,7 +12,7 @@ db_endpoint = open("/app/dbserver.endpoint", 'r', encoding='UTF-8')
 
 app.config['MYSQL_DATABASE_HOST'] = db_endpoint.readline().strip()
 app.config['MYSQL_DATABASE_USER'] = 'admin'
-app.config['MYSQL_DATABASE_PASSWORD'] = '123456'
+app.config['MYSQL_DATABASE_PASSWORD'] = '12345678'
 app.config['MYSQL_DATABASE_DB'] = 'clarusway_phonebook'
 app.config['MYSQL_DATABASE_PORT'] = 3306
 db_endpoint.close()
