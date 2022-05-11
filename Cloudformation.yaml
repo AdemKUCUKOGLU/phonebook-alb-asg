@@ -58,7 +58,8 @@ Resources:
         ImageId: "String"
         InstanceType: "String"
         KeyName: "String"
-        SecurityGroupIds: !GetAtt InstanceSecurityGroup.GroupId
+        SecurityGroupIds: 
+          - !GetAtt InstanceSecurityGroup.GroupId
         TagSpecifications:
           - ResourceType: instance
             Tags:
@@ -127,9 +128,9 @@ Resources:
     Type: AWS::ElasticLoadBalancingV2::Listener
     Properties:
       DefaultActions: # Required
-        TargetGroupArn: !Ref ALBTargetGroup
-        Type: forward
-      LoadBalancerArn:  !Ref MyALB # Required
+        - TargetGroupArn: !Ref ALBTargetGroup
+          Type: forward
+      LoadBalancerArn: !Ref MyALB # Required
       Port: 80
       Protocol: HTTP
 
